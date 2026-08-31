@@ -1,0 +1,38 @@
+{
+  "url": "http://127.0.0.1:8081/",
+  "viewports": {
+    "desktop": {
+      "width": 1280,
+      "height": 800,
+      "status": 200,
+      "title": "星语号",
+      "hasCanvas": false,
+      "bodyTextLen": 206,
+      "bodyTextHash": "1f062d495662f261314ce70bf24a871673cb79a7746810e845aee023047a1b87",
+      "bodyTextPrefix": "STAR WHISPER · AGENT 课堂 星语号 灰雾偷走了声音、记忆和本领。你是星光驯养员。搭一个会说话的伙伴，把它唤醒",
+      "horizontalOverflow": false,
+      "consoleErrors": [],
+      "pageErrors": [],
+      "screenshot": "/workspace/screenshots/app-builder-built.png"
+    },
+    "mobile": {
+      "width": 390,
+      "height": 844,
+      "status": 200,
+      "title": "星语号",
+      "hasCanvas": false,
+      "bodyTextLen": 206,
+      "bodyTextHash": "1f062d495662f261314ce70bf24a871673cb79a7746810e845aee023047a1b87",
+      "bodyTextPrefix": "STAR WHISPER · AGENT 课堂 星语号 灰雾偷走了声音、记忆和本领。你是星光驯养员。搭一个会说话的伙伴，把它唤醒",
+      "horizontalOverflow": false,
+      "consoleErrors": [],
+      "pageErrors": [],
+      "screenshot": "/workspace/screenshots/app-builder-built-mobile.png"
+    }
+  },
+  "brandWarnings": [],
+  "authWarnings": [],
+  "verdictFile": "/workspace/screenshots/app-builder-built.json",
+  "divergesFromBaseline": false,
+  "baselineReasons": []
+}

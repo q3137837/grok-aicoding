@@ -1,0 +1,237 @@
+@import url("https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&family=Noto+Sans+SC:wght@400;500;700&display=swap");
+@import "tailwindcss";
+@import "tw-animate-css";
+
+@theme {
+  --font-sans: "Fredoka", "Noto Sans SC", "PingFang SC", "Microsoft YaHei", sans-serif;
+  --font-display: "Fredoka", "Noto Sans SC", sans-serif;
+
+  --color-navy: #0e1a3a;
+  --color-navy-2: #16244f;
+  --color-navy-3: #1e3168;
+  --color-cream: #f7f0e4;
+  --color-cream-2: #efe4d0;
+  --color-cream-3: #e5d6ba;
+  --color-ink: #1b1635;
+  --color-ink-soft: #4a4563;
+  --color-coral: #ff8a4c;
+  --color-coral-deep: #e06a2c;
+  --color-mint: #3ecfb4;
+  --color-mint-deep: #2ba38e;
+  --color-star: #f5c15a;
+  --color-star-deep: #d4a017;
+  --color-fog: #8b90a5;
+  --color-foam: #fffaf2;
+  --color-persona: #7b63c8;
+  --color-persona-deep: #5d47a8;
+  --color-rag: #3d8fd9;
+  --color-rag-deep: #2c6fad;
+  --color-skill: #f08a3a;
+  --color-skill-deep: #d06e22;
+  --color-trigger: #3ba55c;
+  --color-trigger-deep: #2c7d45;
+  --color-script: #e0b43a;
+  --color-script-deep: #c4961f;
+  --color-display: #e56b9a;
+  --color-display-deep: #c44d7c;
+
+  --radius-sm: 10px;
+  --radius-md: 16px;
+  --radius-lg: 22px;
+  --radius-xl: 28px;
+  --radius-2xl: 36px;
+
+  --shadow-press: 0 5px 0;
+  --shadow-card: 0 10px 28px rgba(14, 26, 58, 0.16);
+}
+
+@layer base {
+  html {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  html,
+  body,
+  #app {
+    min-height: 100%;
+  }
+  body {
+    margin: 0;
+    background: var(--color-navy);
+    color: var(--color-cream);
+    font-family: var(--font-sans);
+  }
+  button:not(:disabled),
+  [role="button"]:not(:disabled) {
+    cursor: pointer;
+  }
+  h1,
+  h2,
+  h3 {
+    text-wrap: balance;
+  }
+  p {
+    text-wrap: pretty;
+  }
+  img {
+    outline: 1px solid rgba(14, 26, 58, 0.08);
+    outline-offset: -1px;
+  }
+}
+
+@keyframes twinkle {
+  0%,
+  100% {
+    opacity: 0.25;
+    transform: scale(0.8);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+@keyframes bob {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-8px);
+  }
+}
+@keyframes breathe {
+  0%,
+  100% {
+    box-shadow: 0 0 0 0 rgba(245, 193, 90, 0.45);
+  }
+  50% {
+    box-shadow: 0 0 0 10px rgba(245, 193, 90, 0);
+  }
+}
+@keyframes jelly {
+  0% {
+    transform: scale(1.12);
+  }
+  60% {
+    transform: scale(0.96);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+@keyframes wiggle {
+  0%,
+  100% {
+    transform: rotate(0deg);
+  }
+  25% {
+    transform: rotate(-8deg);
+  }
+  75% {
+    transform: rotate(8deg);
+  }
+}
+@keyframes confetti-fall {
+  0% {
+    transform: translateY(-10%) rotate(0deg);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(110vh) rotate(240deg);
+    opacity: 0;
+  }
+}
+@keyframes pulse-gap {
+  0%,
+  100% {
+    border-color: color-mix(in oklab, var(--color-coral) 70%, white);
+    transform: scale(1);
+  }
+  50% {
+    border-color: var(--color-star);
+    transform: scale(1.02);
+  }
+}
+@keyframes raise-card {
+  0% {
+    transform: translateY(16px) scale(0.8);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0) scale(1);
+    opacity: 1;
+  }
+}
+@keyframes fog-drift {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-8%);
+  }
+}
+@keyframes ribbon {
+  0% {
+    transform: translateY(-20px) rotate(-12deg);
+    opacity: 0;
+  }
+  20% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(40vh) rotate(18deg);
+    opacity: 0;
+  }
+}
+
+.star-dot {
+  animation: twinkle 2.8s ease-in-out infinite;
+}
+.bob {
+  animation: bob 3.2s ease-in-out infinite;
+}
+.breathe {
+  animation: breathe 1.8s ease-in-out infinite;
+}
+.jelly {
+  animation: jelly 0.42s cubic-bezier(0.34, 1.36, 0.64, 1);
+}
+.wiggle {
+  animation: wiggle 0.45s ease-in-out;
+}
+.gap-pulse {
+  animation: pulse-gap 1.4s ease-in-out infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .star-dot,
+  .bob,
+  .breathe,
+  .jelly,
+  .wiggle,
+  .gap-pulse {
+    animation: none;
+  }
+}
+
+.pressable {
+  transform: translateY(0);
+  transition:
+    transform 120ms cubic-bezier(0.22, 1, 0.36, 1),
+    box-shadow 120ms cubic-bezier(0.22, 1, 0.36, 1),
+    filter 120ms ease;
+}
+.pressable:hover {
+  filter: brightness(1.04);
+}
+.pressable:active {
+  transform: translateY(4px);
+  box-shadow: 0 1px 0 var(--press-shadow, #e06a2c);
+}
+
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  scrollbar-width: none;
+}
